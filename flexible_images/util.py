@@ -11,7 +11,10 @@ except ImportError:
 
 
 def aspect_ratio(image):
-    return float(image.height) / float(image.width)
+    try:
+        return float(image.height) / float(image.width)
+    except Exception,e:
+        return 1.0
 
 
 def aspect_ratio_percent(image):

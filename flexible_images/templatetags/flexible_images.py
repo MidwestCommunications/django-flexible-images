@@ -35,7 +35,7 @@ def flexible_image(context, src, container="div", classes="", inner_classes="", 
 
     # We can't do any of the srcset (or JS switching fallback) if we don't
     # have a thumbnail library installed.
-    if not HAS_THUMBNAILER:
+    if not HAS_THUMBNAILER or src.width == None:
         rv["image"] = src
         return rv
     # For browsers that support srcset: Give them all the sizes and let the
